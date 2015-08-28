@@ -19,4 +19,6 @@ public interface Configuration {
 	 * @return 	Ritorna un array int[2]	che contiene le coordinate, in ordine, x e y*/
 	public int[] getKing(ChessColor color);
 	
+	public boolena equals(Object other);
+	
 }
