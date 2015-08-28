@@ -41,12 +41,15 @@ public class ChessConfiguration implements Configuration {
 	}
 	
 	@Override
-	public boolean equals(Object other){
+public boolean equals(Object other){
 		if (other instanceof Configuration){
 			ChessConfiguration otherConfiguration = (ChessConfiguration) other;
                         for(int i=0;i<8;i++){
                         	for(int j=0; j<8; j++){
-                        		if (at(i, j)!=otherConfiguration.at(i, j))
+                        		if((at(i, j)!=null && otherConfiguration.at(i, j)==null) || (at(i, j)!=null && otherConfiguration.at(i, j)==null))
+                        			return false;
+                        		else if(at(i, j)==null && otherConfiguration.at(i, j)==null);
+                        		else if (!at(i, j).equals(otherConfiguration.at(i, j)))
                         			return false;
                         	}
                         }
